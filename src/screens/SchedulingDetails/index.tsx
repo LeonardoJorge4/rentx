@@ -45,16 +45,20 @@ import {
 
 export function SchedulingDetails() {
   const theme = useTheme();
-  const { navigate } = useNavigation();
+  const navigation = useNavigation();
 
   function handleConfirmRental() {
-    navigate("SchedulingComplete");
+    navigation.navigate("SchedulingComplete");
+  }
+
+  function handleBack() {
+    navigation.goBack();
   }
 
   return (
     <Container>
       <Header>
-        <BackButton onPress={() => { }} />
+        <BackButton onPress={handleBack} />
       </Header>
 
       <CarImages>
@@ -117,8 +121,13 @@ export function SchedulingDetails() {
           </RentalPriceLabel>
 
           <RentalPriceDetails>
-            <RentalPriceQuota>R$ 580 x3 diárias</RentalPriceQuota>
-            <RentalPriceTotal>R$ 2.900</RentalPriceTotal>
+            <RentalPriceQuota>
+              R$ 580 x3 diárias
+            </RentalPriceQuota>
+
+            <RentalPriceTotal>
+              R$ 2.900
+            </RentalPriceTotal>
           </RentalPriceDetails>
         </RentalPrice>
       </Content>
