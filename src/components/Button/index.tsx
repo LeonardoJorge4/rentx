@@ -13,9 +13,17 @@ interface Props {
   color?: string;
   enabled?: boolean;
   loading?: boolean;
+  light?: boolean;
 }
 
-export function Button({ title, color, enabled = true, loading = false, onPress }: Props) {
+export function Button({
+  title,
+  onPress,
+  color,
+  enabled = true,
+  loading = false,
+  light = false,
+}: Props) {
   const theme = useTheme();
 
   return (
@@ -30,7 +38,9 @@ export function Button({ title, color, enabled = true, loading = false, onPress 
         ? <ActivityIndicator
             color={theme.colors.shape}
           />
-        : <Title>{title}</Title>
+        : <Title light={light}>
+            {title}
+          </Title>
       }
     </Container>
   );
