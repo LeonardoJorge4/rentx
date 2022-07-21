@@ -8,11 +8,13 @@ import {
 } from 'react-native';
 import * as yup from 'yup';
 import { useTheme } from 'styled-components';
+import { useNavigation } from '@react-navigation/native';
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { PasswordInput } from '../../components/PasswordInput';
 
+import { useAuth } from '../../hooks/auth';
 import {
   Container,
   Header,
@@ -21,8 +23,6 @@ import {
   Form,
   Footer,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { useAuth } from '../../hooks/auth';
 
 export function SignIn() {
   const theme = useTheme();
