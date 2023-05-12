@@ -54,6 +54,9 @@ Para rodar o projeto, basta executar os seguintes comandos, em seu terminal com 
 
   # Navegue até a pasta do projeto e baixe as dependências
   cd rentx && yarn
+  
+  # Rodar a api em json server
+  yarn api
 
   # Executar o projeto
   yarn android # Android Studio
